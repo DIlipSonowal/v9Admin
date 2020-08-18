@@ -1,0 +1,66 @@
+.sub-menu-area{
+  width: 100%;
+  height: 0;
+  margin-top: 15px;
+  background-color: aliceblue;
+  box-shadow: 6px 11px 24px -16px rgba(0, 0, 0, 0.75);
+  position: fixed;
+  left: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+  z-index: 9;
+}
+
+.adminmenuhead{
+  color: #312d40;
+  line-height: 1em;
+  margin-bottom: 8px;
+}
+.bg-white{
+  padding:20px;
+  position: relative;
+  box-shadow: 6px 11px 24px -16px rgba(0, 0, 0, 0.75);
+  background:#fff;
+}
+.hrline{
+  margin: 8px 0;
+}
+
+.li a{
+  display: block;
+  padding: 5px 0 5px 23px;
+  border-left: 3px solid #f0f0f0;
+  line-height: 40px;
+  width: 100%;
+  height: 100%;
+}
+.li a:hover{
+  display: block;
+  padding: 5px 0 5px 23px;
+  border-left: 3px solid #0b0c26 !important;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff !important;
+}
+.li{
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  margin: 5px 0;
+  transition: all 0.5s;
+  background-color: #f5faff;
+}
+.li:hover{
+  width: 100%;
+  transition: width 0.5s;
+  background: #f71735 !important;
+  color: #fff !important;
+  border: none;
+}
+
+.libg{
+  background: #f71735 !important;
+  color: #fff  !important;
+  border-left: 3px solid #0b0c26 !important;
+}

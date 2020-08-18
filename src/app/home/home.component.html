@@ -1,0 +1,131 @@
+<mat-toolbar color="primary" no-padding>
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+      <button mat-icon-button>
+     <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+   </button>
+     <span><a href="/">HOME</a></span>
+     <a mat-button routerLink="/home/emp" fxShow="true" fxHide.xs="true">Employee</a>
+     <a mat-button routerLink="/home/products" fxShow="true" fxHide.xs="true">Products</a>
+       <a mat-button routerLink="/home/img" fxShow="true" fxHide.xs="true">Images</a>
+       <a mat-button routerLink="/home/prime" fxShow="true" fxHide.xs="true">Prime</a>
+       <a mat-button routerLink="/home/filter" fxShow="true" fxHide.xs="true">Filter</a>
+       <a mat-button routerLink="/home/landing" fxShow="true" fxHide.xs="true">Landing</a>
+       <a mat-button routerLink="/home/admin" fxShow="true" *ngIf="isAdmin" fxHide.xs="true">Admin</a>
+       <a mat-button routerLink="/home/address" fxShow="true"  fxHide.xs="true">Address</a>
+       <a mat-button routerLink="/home/dashboard" fxShow="true"  fxHide.xs="true">Dashboard</a>
+       <a mat-button routerLink="/home/country" fxShow="true"  fxHide.xs="true">Country</a>
+       <a mat-button routerLink="/home/person" fxShow="true"  fxHide.xs="true">Person</a>
+       <a mat-button routerLink="/home/article" fxShow="true"  fxHide.xs="true">Article</a>
+     <!-- <a mat-button routerLink="/home/img">Images</a> -->
+     <span class="spacer"></span>
+     <a mat-button>
+       <button mat-icon-button (click)="logout()">
+             <mat-icon>exit_to_app</mat-icon>
+
+           </button>
+     </a>
+     <a mat-button routerLink="/login">
+        <button mat-icon-button>
+           <mat-icon>help_outline</mat-icon>
+         </button>
+     </a>
+     <a mat-button routerLink="/login">
+       <button mat-icon-button >
+           <mat-icon>person_outline</mat-icon>
+         </button>
+     </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+ <mat-sidenav #sidenav>
+   <mat-nav-list>
+    <a mat-list-item [routerLink]="'/home/home/slider'"   [matMenuTriggerFor]="home" >  Home 	<mat-icon >arrow_right</mat-icon></a>
+     <a mat-list-item [routerLink]="'/accounts'">  About 	<mat-icon>arrow_right</mat-icon></a>
+     <a mat-list-item [routerLink]="'/create-account'">Contact Us 	<mat-icon>arrow_right</mat-icon> </a>
+     <a mat-list-item [routerLink]="'/home/404'"> Services	<mat-icon>arrow_right</mat-icon> </a>
+     <a mat-list-item [routerLink]="'/home/500'">Visa 	<mat-icon>arrow_right</mat-icon></a>
+     <a mat-list-item [routerLink]="'/home/emp'" fxShow.xs="true" fxHide="true">Policy 	<mat-icon>arrow_right</mat-icon></a>
+      <a mat-list-item [routerLink]="'/home/products'" fxShow.xs="true" fxHide="true" > Products 	<mat-icon>arrow_right</mat-icon></a>
+     <a mat-list-item [routerLink]="'/home/img'">Users 	<mat-icon>arrow_right</mat-icon></a>
+
+     <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close 	<mat-icon>arrow_right</mat-icon></a>
+
+     <mat-menu #home="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="changes"> Edit Home</button>
+      <button mat-menu-item [matMenuTriggerFor]="invertebrates">New changes</button>
+    </mat-menu>
+<mat-menu #changes="matMenu" >
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> Top Slider</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> Our Goals</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> About V9 Immigration</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'">Why Choose Us</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'">Immigartion Service for you</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'">Three Simple Steps</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'">User Feedback</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> Bottom Slider</a></button>
+</mat-menu>
+
+<mat-menu #vertebrates="matMenu">
+ <button mat-menu-item [matMenuTriggerFor]="Renderer">
+     Renderer
+ </button>
+ <button mat-menu-item [matMenuTriggerFor]="subjects">Subjects </button>
+ <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+ <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+ <button mat-menu-item>Birds</button>
+ <button mat-menu-item>Mammals</button>
+</mat-menu>
+
+<mat-menu #Renderer="matMenu">
+   <button mat-menu-item>
+     <a mat-list-item [routerLink]="'/home/renderer'"> Renderer</a>
+   </button>
+</mat-menu>
+
+<mat-menu #subjects="matMenu">
+   <button mat-menu-item> <a mat-list-item [routerLink]="'/home/subjects'">Subjects</a>
+   </button>
+</mat-menu>
+
+<mat-menu #invertebrates="matMenu">
+ <button mat-menu-item>Insects</button>
+ <button mat-menu-item>Molluscs</button>
+ <button mat-menu-item>Crustaceans</button>
+ <button mat-menu-item>Corals</button>
+ <button mat-menu-item>Arachnids</button>
+ <button mat-menu-item>Velvet worms</button>
+ <button mat-menu-item>Horseshoe crabs</button>
+</mat-menu>
+
+<mat-menu #fish="matMenu">
+ <button mat-menu-item>Baikal oilfish</button>
+ <button mat-menu-item>Bala shark</button>
+ <button mat-menu-item>Ballan wrasse</button>
+ <button mat-menu-item>Bamboo shark</button>
+ <button mat-menu-item>Banded killifish</button>
+</mat-menu>
+
+<mat-menu #amphibians="matMenu">
+ <button mat-menu-item>Sonoran desert toad</button>
+ <button mat-menu-item>Western toad</button>
+ <button mat-menu-item>Arroyo toad</button>
+ <button mat-menu-item>Yosemite toad</button>
+</mat-menu>
+
+<mat-menu #reptiles="matMenu">
+ <button mat-menu-item>Banded Day Gecko</button>
+ <button mat-menu-item>Banded Gila Monster</button>
+ <button mat-menu-item>Black Tree Monitor</button>
+ <button mat-menu-item>Blue Spiny Lizard</button>
+ <button mat-menu-item disabled>Velociraptor</button>
+</mat-menu>
+
+   </mat-nav-list>
+ </mat-sidenav>
+ <mat-sidenav-content>
+     <main>
+       <router-outlet></router-outlet>
+     </main>
+ </mat-sidenav-content>
+</mat-sidenav-container>

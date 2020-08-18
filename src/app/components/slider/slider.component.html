@@ -1,0 +1,118 @@
+<div fxFlex fxLayout="column" style="height:300vh" fxLayoutGap="10px">
+  <div fxLayout="row wrap">
+    <div fxFlex="10%" fxFlex.lt-sm="50" fxFlex.lt-md="33" fxLayout="column" style="padding: 5px;">
+      <button mat-raised-button (click)="search()" color="primary"> View All</button>
+    </div>
+    <div fxFlex="10%" fxFlex.lt-sm="50" fxFlex.lt-md="33" fxLayout="column" style="padding: 5px;">
+      <button mat-raised-button (click)="search()" color="primary">Users</button>
+    </div>
+    <div fxFlex="10%" fxFlex.lt-sm="50" fxFlex.lt-md="33" fxLayout="column" style="padding: 5px;">
+      <button mat-raised-button (click)="search()" color="primary">Status</button>
+    </div>
+    <div fxFlex="20%" fxFlex.lt-sm="50" fxFlex.lt-md="33" fxLayout="column" style="padding: 5px;">
+
+    </div>
+
+    <div fxFlexOffset.xs="0" fxFlex="10%" fxFlex.md="20" fxFlex.sm="50" fxFlexOffset.lg="30">
+      <mat-form-field appearance="outline">
+        <mat-label>Search products</mat-label>
+        <input matInput placeholder="Placeholder" [(ngModel)]="query" (ngModelChange)="searchItem($event)">
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="center center" >
+    <!-- <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
+            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+          </div>
+          <div  class="files-list" *ngFor="let file of files;let i= index">
+              <p> {{ file }} </p>
+              <button class="delete-file" (click)="deleteAttachment(i)">
+                <img src="../../assets/Recycle_Bin_Full.png">
+              </button>
+           </div>-->
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex="100%" fxFlex.xs="100%">
+
+      <div fxFlex="50%" fxFlex.lt-sm="50" fxFlex.lt-md="33"  style="padding: 5px;">
+          <div class="card">
+      <form [formGroup]="homeForm">
+        <div class="form-wraper">
+          <div class="form-container">
+
+            <div class="form-body">
+              <h3>Enter the details for Home Slider</h3>
+              <mat-form-field class="justifier" appearance="outline">
+                <input matInput placeholder="Header" formControlName="header" text="email" class="form-input">
+              </mat-form-field>
+              <mat-form-field class="justifier" appearance="outline">
+                <input matInput placeholder="subheader" formControlName="subHeader" text="password" class="form-input">
+              </mat-form-field>
+              <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
+                <input hidden type="file" formControlName="files" #fileInput (change)="uploadFile($event.target.files)">
+              </div>
+              <div class="files-list" *ngFor="let file of files;let i= index">
+                <p> {{ file }} </p>
+                <button class="delete-file" (click)="deleteAttachment(i)">
+                  <img src="../../assets/Recycle_Bin_Full.png">
+                </button>
+              </div>
+            </div>
+            <div fxFlex.lt-sm="50" fxLayoutAlign="end end" fxFlex.lt-md="33" style="padding: 20px;">
+              <button mat-raised-button (click)="search()" color="primary">Submit</button>
+
+            </div>
+            <div class="additional-link" fxLayoutAlign="end end" style="padding: 20px;">
+              <a routerLink="/register">No Account?
+                <strong>Create one here</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+      </div>
+      <div fxFlex="50%" fxFlex.lt-sm="50" fxFlex.lt-md="33"   style="padding: 5px;">
+          <div class="card">
+      <form [formGroup]="homeForm">
+        <div class="form-wraper">
+          <div class="form-container">
+
+            <div class="form-body">
+              <h3>Enter the details for Sections</h3>
+              <mat-form-field class="justifier" appearance="outline">
+                <input matInput placeholder="Header" formControlName="header" text="email" class="form-input">
+              </mat-form-field>
+              <mat-form-field class="justifier" appearance="outline">
+                <input matInput placeholder="subheader" formControlName="subHeader" text="password" class="form-input">
+              </mat-form-field>
+              <mat-form-field class="justifier" appearance="outline">
+                  <input matInput placeholder="Header" formControlName="header" text="email" class="form-input">
+                </mat-form-field>
+                <mat-form-field class="justifier" appearance="outline">
+                  <input matInput placeholder="subheader" formControlName="subHeader" text="password" class="form-input">
+                </mat-form-field>
+            </div>
+            <div fxFlex.lt-sm="50" fxLayoutAlign="end end" fxFlex.lt-md="33" style="padding: 20px;">
+              <button mat-raised-button (click)="search()" color="primary">Submit</button>
+
+            </div>
+            <div class="additional-link" fxLayoutAlign="end end" style="padding: 20px;">
+              <a routerLink="/register">No Account?
+                <strong>Create one here</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+
+  </div>

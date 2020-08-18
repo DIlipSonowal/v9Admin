@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span><img src="./assets/logo/v9-logo.jpg" width='200px'></span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="example-spacer"></span>
+
+    <button mat-button>About</button>
+    <button mat-button>Contact</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+ <form [formGroup]="loginForm">
+   <div class="form-wraper">
+  <div class="form-container card">
+    <div class="form-header header">
+    <h2>Welcome Back!!</h2>
+    </div>
+
+    <div class="form-body">
+
+      <mat-form-field class="justifier" appearance="outline">
+          <input matInput placeholder="Username"  formControlName="username"  text="email" class="form-input">
+      </mat-form-field>
+      <mat-form-field class="justifier" appearance="outline">
+          <input matInput placeholder="Password" formControlName="password" text="password" class="form-input">
+      </mat-form-field>
+    </div>
+
+    <div class="form-footer">
+        <button mat-raised-button (click)="login()" class="btn custom-btn">
+            <mat-icon>input</mat-icon> Login
+        </button>
+    </div>
+
+    <div class="additional-link">
+      <a routerLink="/register">No Account? <strong>Create one here</strong></a>
+    </div>
+  </div>
+</div>
+ </form>
+
+
