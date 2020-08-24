@@ -12,11 +12,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { JwtInterceptor, ErrorInterceptor } from './backend';
 import { fakeBackendProvider } from './backend/fake-backend';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import {AdminPanelModule} from './admin-panel/admin-panel.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
     SharedModule,
     FlexLayoutModule,
     CommonModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    AdminPanelModule
   ],
   providers: [  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

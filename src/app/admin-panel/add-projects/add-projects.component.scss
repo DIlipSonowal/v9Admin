@@ -1,0 +1,153 @@
+.card-box {
+  margin: 17px;
+  background: #ffffff;
+}
+.form-container{
+width: 100%
+}
+
+$input-bg: #fff !default;
+$input-border-color: #ced4da !default;
+$input-border-width: 1px !default;
+$input-border-radius: 0 !default;
+$ckThemeColor: #76daff;
+
+.cke_top,
+.cke_bottom {
+background-color: $input-bg !important;
+}
+.cke_top {
+border-bottom-color: rgba(216, 226, 239, 0.4) !important;
+}
+.cke_bottom {
+border-top-color: rgba(216, 226, 239, 0.4) !important;
+}
+.cke {
+border: $input-border-width solid $input-border-color !important;
+border-radius: $input-border-radius !important;
+overflow: hidden !important;
+
+a {
+  border-radius: $input-border-radius !important;
+
+  &,
+  * {
+    cursor: pointer !important;
+  }
+
+  &.cke_button_off {
+    &:hover,
+    &:focus,
+    &:active {
+      background: $ckThemeColor !important;
+      border-color: darken($ckThemeColor, 0%) !important;
+    }
+  }
+
+  &.cke_button_on {
+    background: $ckThemeColor !important;
+    border-color: darken($ckThemeColor, 0%) !important;
+  }
+}
+
+.cke_combo{
+  border-radius: $input-border-radius !important;
+
+  &.cke_combo_off {
+    .cke_combo_button {
+      &:hover,
+      &:focus,
+      &:active {
+        background: $ckThemeColor !important;
+        border-color: darken($ckThemeColor, 0%) !important;
+      }
+    }
+  }
+  &.cke_combo_on {
+    a {
+      &.cke_combo_button {
+        background: $ckThemeColor !important;
+        border-color: darken($ckThemeColor, 0%) !important;
+      }
+    }
+  }
+}
+
+.cke_toolbar.cke_toolbar_last {
+  display: none !important;
+}
+
+}
+
+.cke_combo:after,
+.cke_toolbar_separator {
+border-right-color: #dde9fb !important;
+}
+.mat-table[_ngcontent-wwb-c224] {
+background: #f9f9f9 !important;
+}
+:host ::ng-deep .ck-editor__editable_inline {
+min-height: 200px;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+padding: 0em 0 0.5em 0 !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+background: #fff;
+}
+.form-container-bg{
+background: #f9f9f9 !important;
+}
+mat-form-field {
+margin-right: 12px;
+}
+.files-list {
+background: #ffffff00;
+border: none;
+}
+.uploadfilecontainer {
+height: 100px;
+border: none;
+}
+.filesStyling{
+border: 1px dashed #6a6d80;
+border-radius: 9px;
+}
+.heading-title{
+padding: 10px 0px;
+font-size: 15px;
+}
+a{
+padding: 0 3rem;
+line-height: 3rem;
+height: 3rem;
+color: #324164;
+font-size: 15px;
+background: #ffffff;
+letter-spacing: 0.025em;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+text-decoration: none;
+text-transform: uppercase;
+display: block;
+border-radius: 0.24rem;
+box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.1);
+&:before{
+position: absolute;
+width: 3.2rem;
+line-height: 3.2rem;
+font-size: 1.3rem;
+display: block;
+text-align: center;
+left: 0;
+top: 0;
+color: #0080e6;
+opacity: .8;
+font-family: "FontAwesome";
+}
+}
+#attachment a::before{
+content: "\f260" !important;
+}
+

@@ -1,0 +1,97 @@
+
+<div fxFlexFill fxLayoutAlign="start stretch" fxLayout="row" fxLayoutGap="10px">
+    <form [formGroup]="UsersForm">
+      <div fxLayout="row wrap " class="card-box  card">
+        <div fxFlex="70%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+          <h3> New User</h3>
+        </div>
+        <div class="bg-grey" fxFlex="100%">
+        <div fxFlex="35%" fxFlex.lt-sm="95%" fxFlex.lt-md="50%" fxLayout="column" style="padding: 5px;">
+
+          <mat-form-field class="justifier" appearance="outline">
+            <input matInput placeholder="First Name" formControlName="firstName" text="First Name" class="form-input">
+          </mat-form-field>
+          <control-messages [control]="UsersForm.controls.firstName" style="color:red"></control-messages>
+          <mat-form-field class="justifier" appearance="outline">
+              <input matInput placeholder="Last Name" formControlName="lastName" text="Last Name" class="form-input">
+            </mat-form-field>
+            <control-messages [control]="UsersForm.controls.email" style="color:red"></control-messages>
+            <mat-form-field class="justifier" appearance="outline">
+                <input matInput placeholder="Email" formControlName="email" text="Email" class="form-input">
+              </mat-form-field>
+              <control-messages [control]="UsersForm.controls.email" style="color:red"></control-messages>
+              <div class="formSelect">
+                  <div class="custom-select">
+                    <select>
+                      <option value="0">Language:</option>
+                      <option value="1">English</option>
+                      <option value="2">Brusch</option>
+                      <option value="3">German</option>
+                      <option value="4">Spanish</option>
+                      <option value="5">Hindi</option>
+                    </select>
+                  </div>
+                </div>
+          <span class="heading-title" id="attachment" title="">
+            <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
+
+        </div>
+        <div fxFlex="35%" fxFlex.lt-sm="50" fxFlex.lt-md="33" fxLayout="column" style="padding: 5px;">
+
+          <div class="form-wraper">
+            <div class="form-container form-container-bg ">
+
+              <div class="form-body">
+                <h3>Enter the details for Sections</h3>
+                <div class="formSelect">
+                  <div class="custom-select">
+                    <select>
+                      <option value="0">project:</option>
+                      <option value="1">Audi</option>
+                      <option value="2">BMW</option>
+                      <option value="3">Citroen</option>
+                      <option value="4">Ford</option>
+                      <option value="5">Honda</option>
+                      <option value="6">Jaguar</option>
+                      <option value="7">Land Rover</option>
+                      <option value="8">Mercedes</option>
+                      <option value="9">Mini</option>
+                      <option value="10">Nissan</option>
+                      <option value="11">Toyota</option>
+                      <option value="12">Volvo</option>
+                    </select>
+                  </div>
+                </div>
+                <mat-label>Email Notification</mat-label>
+            <section class="example-section">
+
+                <span class="example-list-section">
+                  <ul>
+
+                        <li>  <mat-checkbox class="example-margin">I don't want to be notified of changes that I make myself </mat-checkbox>
+                          <mat-checkbox class="example-margin" >I don't want to be notified from closed tasks </mat-checkbox>
+                          <mat-checkbox class="example-margin">I don't want to be notified as a previous assignee </mat-checkbox>
+                          <mat-checkbox class="example-margin" [disabled]="true">Do not notify anyone about updates made by me</mat-checkbox>
+                    </li>
+                  </ul>
+                </span>
+              </section>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        </div>
+        <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+          <div style="padding: 20px;">
+            <button mat-raised-button color="primary">Cancel</button>
+
+          </div>
+          <div style="padding: 20px;">
+            <button mat-raised-button color="secondary" [disabled]= "!UsersForm.valid">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

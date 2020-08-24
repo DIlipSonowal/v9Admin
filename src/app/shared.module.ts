@@ -37,18 +37,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { RouterModule } from '@angular/router';
-
-
+import { MatTableDataSource } from '@angular/material/table';
 @NgModule({
+  declarations: [],
   imports: [MatNativeDateModule, MatDatepickerModule, MatIconModule, MatButtonModule,
     MatCheckboxModule, MatToolbarModule, FormsModule, MatCardModule, MatFormFieldModule,RouterModule,
     MatInputModule, MatListModule, MatRadioModule, MatSidenavModule, MatTableModule, MatMenuModule,
-  ],
+    ],
 
   exports: [MatNativeDateModule, FormsModule, MatSidenavModule, MatProgressBarModule,
     MatDatepickerModule, MatIconModule, MatButtonModule, MatCheckboxModule, MatMenuModule,
     MatTableModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule,
-    MatListModule, MatRadioModule, MatProgressSpinnerModule, RouterModule
+    MatListModule, MatRadioModule, MatProgressSpinnerModule, RouterModule,
   ],
 
 })

@@ -9,6 +9,9 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
+  {
+    path: 'admin', loadChildren: () => import('./admin-panel/admin-panel.module').then(m => m.AdminPanelModule)
+  },
   { path: '', redirectTo: 'login' , pathMatch: 'full'}
 ];
 

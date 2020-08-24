@@ -1,0 +1,53 @@
+<header class="header">
+    <div class="header__search">Search...</div>
+    <div class="header__avatar">
+     <div> Kiran Kumar</div>
+      <div class="menu-icon">
+        <img src="">
+      </div>
+     <div>
+       <!-- <mat-icon class="icon">input</mat-icon>&nbsp;
+    <span class="label">Login</span>-->
+     </div>
+    </div>
+
+  </header>
+<div class="grid-container">
+
+
+
+   <aside class="sidenav " id="top-menu-container">
+     <div class="sidenav__close-icon">
+       <i class="fas fa-times sidenav__brand-close"></i>
+     </div>
+
+      <!-- <ul class="menu-cls">
+         <li class="li-cls" id="home"><a  href="home">Home</a><span class="admin-drop"></span></li>
+         <li class="li-cls"><a id="task" href="home">Task</a><span class="admin-drop"></span></li>
+         <li class="li-cls"><a id="Peoples" href="home">Peoples</a><span class="admin-drop"></span></li>
+         <li class="li-cls"><a id="Projects" href="home">Projects</a><span class="admin-drop"></span></li>
+         <li class="li-cls"><a id="Risks" href="home">Risks</a><span class="admin-drop"></span></li>
+       </ul>-->
+
+
+
+                <ul class="menu-cls">
+                  <li class="li-cls" id="menu-link-1"><a routerLink="/admin/admin">Home</a><span class="admin-drop"></span></li>
+                  <li class="li-cls" id="menu-link-2"><a href="#">About</a><span class="admin-drop"></span></li>
+                  <li class="li-cls" id="menu-link-3"><a routerLink="/admin/task">Task</a><span class="admin-drop"></span></li>
+                  <li class="li-cls" id="menu-link-1"><a routerLink="/admin/users">Peoples</a><span class="admin-drop"></span></li>
+                  <li class="li-cls" id="menu-link-2"><a routerLink="/admin/projects">Projects</a><span class="admin-drop"></span></li>
+                  <li class="li-cls" id="menu-link-3"><a href="#">Contact</a><span class="admin-drop"></span></li>
+                </ul>
+
+
+            <!--<div class="card-box card" style="border-radius:none;">
+
+              </div>-->
+   </aside>
+
+   <main class="main">
+        <router-outlet></router-outlet>
+
+   </main>
+</div>
