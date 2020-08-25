@@ -6,16 +6,12 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import {FormControl} from '@angular/forms';
 
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  selector: 'app-goals',
+  templateUrl: './goals.component.html',
+  styleUrls: ['./goals.component.scss']
 })
-export class SliderComponent implements OnInit {
-
-
-  date = new FormControl(new Date());
+export class GoalsComponent implements OnInit {
   files = [];
-  serializedDate = new FormControl((new Date()).toISOString());
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   constructor(private fb: FormBuilder, private _ngZone: NgZone) { }
    taskForm = this.fb.group({

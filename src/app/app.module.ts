@@ -30,7 +30,7 @@ import { HeaderComponent } from './header/header.component';
     FlexLayoutModule,
     CommonModule,
     FormsModule, ReactiveFormsModule,
-    AdminPanelModule
+    AdminPanelModule,
   ],
   providers: [  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

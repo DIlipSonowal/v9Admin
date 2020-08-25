@@ -16,3 +16,6 @@ flex: 1 1 auto;
 .sidenav-container .sidenav .navigation-list .navigation-item .mat-icon.mat-icon-left {
   margin-right: 20px;
 }
+::ng-deep .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content{
+  justify-content: space-between !important;
+}

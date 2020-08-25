@@ -7,13 +7,14 @@ import { DashomeComponent } from './dashome.component';
 import { SliderComponent } from '../components/slider/slider.component';
 import {SharedModule} from '../shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GoalsComponent } from '../components/goals/goals.component';
 @NgModule({
-  declarations: [DashomeComponent,  SliderComponent,],
+  declarations: [DashomeComponent,  SliderComponent, GoalsComponent],
   imports: [
     FlexLayoutModule,
     CommonModule, RouterModule, FormsModule, ReactiveFormsModule, DashomeRoutingModule,SharedModule
   ],
-  exports: [DashomeComponent, SliderComponent],
+  exports: [DashomeComponent, SliderComponent, GoalsComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashomeModule { }
