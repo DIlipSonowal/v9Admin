@@ -10,9 +10,11 @@ import {DashomeModule} from '../dashome/dashome.module';
 import {DasaboutModule} from '../dasabout/dasabout.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {UploadDirective} from '../directives/upload.directive';
+import { MainComponent } from '../main/main.component';
+
 @NgModule({
   declarations: [HomeComponent, CardComponent,
-    CoutryGraphComponent, UploadDirective
+    CoutryGraphComponent, UploadDirective, MainComponent,
     ],
   imports: [
     CommonModule,
@@ -24,6 +26,6 @@ import {UploadDirective} from '../directives/upload.directive';
     FlexLayoutModule
   ],
   exports: [HomeComponent, CardComponent,
-    CoutryGraphComponent]
+    CoutryGraphComponent, MainComponent]
 })
 export class HomeModule { }

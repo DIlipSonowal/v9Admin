@@ -1,0 +1,617 @@
+<div fxFlex fxLayout="column" fxLayoutGap="20px">
+
+  <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="40px">
+    <!-- <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+           <h3> Top Slider</h3>
+         </div>-->
+
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3">Total Revenue</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div class="flex-wrapper">
+          <div class="single-chart">
+            <svg viewBox="0 0 36 36" class="circular-chart red">
+              <path class="circle-bg" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle" stroke-dasharray="70, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <text x="18" y="20.35" class="percentage">70%</text>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-weight-normal pt-2 mb-1">2345</h2>
+            <p class="text-muted">Revenue Today</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3"> Sales Analytics</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu1="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div class="flex-wrapper">
+          <div class="single-chart">
+            <svg viewBox="0 0 36 36" class="circular-chart orange">
+              <path class="circle-bg" d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle" stroke-dasharray="70, 100" d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <text x="18" y="20.35" class="percentage">70%</text>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-weight-normal pt-2 mb-1">2345</h2>
+            <p class="text-muted">Revenue Today</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3">Statistics</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu2="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div class="flex-wrapper">
+          <div class="single-chart">
+            <svg viewBox="0 0 36 36" class="circular-chart green">
+              <path class="circle-bg" d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <text x="18" y="20.35" class="percentage">60%</text>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-weight-normal pt-2 mb-1">2345</h2>
+            <p class="text-muted">Revenue Today</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3"> Daily Sales</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu3="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div class="flex-wrapper">
+          <div class="single-chart">
+            <svg viewBox="0 0 36 36" class="circular-chart blue">
+              <path class="circle-bg" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <text x="18" y="20.35" class="percentage">90%</text>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-weight-normal pt-2 mb-1">2345</h2>
+            <p class="text-muted">Revenue Today</p>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    <!--<div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+           <div style="padding: 20px;">
+             <button mat-raised-button color="primary">Cancel</button>
+
+           </div>
+           <div style="padding: 20px;">
+             <button mat-raised-button color="secondary">Submit</button>
+
+           </div>
+         </div>-->
+  </div>
+  <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="40px">
+    <!-- <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+             <h3> Top Slider</h3>
+           </div>-->
+
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3">Daily Sales</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu4" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu4="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div id="chartdiv"></div>
+      </div>
+    </div>
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3"> Sales Analytics</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu5" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu5="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div id="chartdiv1"></div>
+      </div>
+    </div>
+    <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+      <div class="alignCard">
+        <div>
+          <h4 class="header-title mt-0 mb-3">Statistics</h4>
+        </div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu6" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu6="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="alignCircle">
+        <div id="chartdiv2"></div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="40px">
+      <!-- <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+             <h3> Top Slider</h3>
+           </div>-->
+
+      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+        <div class="alignCard">
+          <div>
+            <h4 class="header-title mt-0 mb-3">Team</h4>
+          </div>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu7" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu7="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="alignCircle">
+          <div class="flex-wrapper">
+              <div class="circle-img">
+                  <img src="/assets/user-1.jpg">
+                   </div>
+            <div>
+              <h2 class="font-weight-normal pt-2 mb-1">Charle</h2>
+              <p class="text-muted">charle@gmail.com</p>
+              <b class="text-green">Admin</b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+        <div class="alignCard">
+          <div>
+            <h4 class="header-title mt-0 mb-3">Team</h4>
+          </div>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu8" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu8="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="alignCircle">
+          <div class="flex-wrapper">
+              <div class="circle-img">
+                  <img src="/assets/user-2.jpg">
+                   </div>
+            <div>
+                <h2 class="font-weight-normal pt-2 mb-1">Smith</h2>
+                <p class="text-muted">smith@gmail.com</p>
+                <b class="text-pink">Consultant</b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+        <div class="alignCard">
+          <div>
+            <h4 class="header-title mt-0 mb-3">Team</h4>
+          </div>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu9" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu9="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="alignCircle">
+          <div class="flex-wrapper">
+              <div class="circle-img">
+                  <img src="/assets/user-3.jpg">
+                   </div>
+            <div>
+                <h2 class="font-weight-normal pt-2 mb-1">jacob</h2>
+                <p class="text-muted">jacob@gmail.com</p>
+                <b class="text-orange">Designer</b>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+        <div class="alignCard">
+          <div>
+            <h4 class="header-title mt-0 mb-3">Team</h4>
+          </div>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu10" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu10="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="alignCircle">
+          <div class="flex-wrapper">
+              <div class="circle-img">
+               <img src="/assets/user-10.jpg">
+                </div>
+            <div>
+                <h2 class="font-weight-normal pt-2 mb-1">Arpitha</h2>
+                <p class="text-muted">arpitha@gmail.com</p>
+                <b class="text-blue">Developer</b>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="40px">
+        <!-- <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+                 <h3> Top Slider</h3>
+               </div>-->
+
+        <div class="card-box  card" fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+          <div class="alignCard">
+            <div>
+              <h4 class="header-title mt-0 mb-3">Total Revenue</h4>
+            </div>
+            <div>
+              <button mat-icon-button [matMenuTriggerFor]="menu11" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu11="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Check voice mail</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Disable alerts</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          <div class="alignCircle">
+              <mat-table #table [dataSource]="dataSource">
+
+                  <!-- Checkbox Column -->
+                  <ng-container matColumnDef="select">
+                    <mat-header-cell *matHeaderCellDef>
+                      <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+                      </mat-checkbox>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                      <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                      </mat-checkbox>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="position">
+                    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef> Subject </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="weight">
+                    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="symbol">
+                    <mat-header-cell *matHeaderCellDef> Assign </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="author">
+                    <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="duedate">
+                    <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.duedate}} </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                  </mat-row>
+                </mat-table>
+          </div>
+        </div>
+        <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+          <div class="alignCard">
+            <div>
+              <h4 class="header-title mt-0 mb-3"> Todays Shedule</h4>
+            </div>
+            <div>
+              <button mat-icon-button [matMenuTriggerFor]="menu12" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu12="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Check voice mail</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Disable alerts</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          <div class="alignCircle">
+             <!-- <div class="container">
+                  <div class="calendar-assets">
+                      <h1 id="currentDate"></h1>
+                      <div class="field">
+                          <label for="date">Pesquisa por data</label>
+                          <form class="form-input" id="date-search" onsubmit="return setDate(this)">
+                              <input type="date" class="text-field" name="date" id="date" required>
+                              <button type="submit" class="btn btn-small" title="Pesquisar"><i class="fas fa-search"></i></button>
+                          </form>
+                      </div>
+                      <div class="day-assets">
+                          <button class="btn" onclick="prevDay()" title="Dia anterior"><i class="fas fa-chevron-left"></i> </button>
+                          <button class="btn" onclick="resetDate()" title="Dia atual"><i class="fas fa-calendar-day"></i> Hoje</button>
+                          <button class="btn" onclick="nextDay()" title="Próximo dia"><i class="fas fa-chevron-right"></i> </button>
+                      </div>
+                  </div>
+                  <div class="calendar" id="table">
+                      <div class="header">
+
+                          <div class="month" id="month-header">
+
+                          </div>
+                          <div class="buttons">
+                              <button class="icon" onclick="prevMonth()" title="Mês anterior"><i class="fas fa-chevron-left"></i></button>
+                              <button class="icon" onclick="nextMonth()" title="Próximo mês"><i class="fas fa-chevron-right "></i></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>-->
+
+          </div>
+        </div>
+
+      </div>
+</div>
+
+<!--<div fxLayout="column" fxLayoutAlign="start space-between" fxLayoutGap="10px">
+      <div class="first_bar">
+        Second Div
+      </div>
+    <div fxLayout="row" fxLayoutAlign="space-bewteen start" fxLayoutGap="10px">
+      <div fxFlex="12%" class="second_bar">
+        Side
+      </div>
+      <div fxFlex="88%" fxLayout="column"  fxLayoutAlign="space-bewteen" fxLayoutGap="10px">
+        <div [ngClass]="['third_bar_1']">
+        first
+        </div>
+        <div [ngClass]="['third_bar_2']">
+        second
+        <div>
+      </div>
+    </div>
+ </div>-->
