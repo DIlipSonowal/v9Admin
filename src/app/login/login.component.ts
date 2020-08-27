@@ -40,18 +40,18 @@ export class LoginComponent implements OnInit {
   get f() {
     return this.loginForm.controls;
   }
-  login() {
+  login(value) {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return
     }
-
+    console.log(value);
     this.loading = true;
-    this.auth.login(this.f.username.value, this.f.password.value)
+    this.auth.login(value.username, value.password)
       .pipe(first())
       .subscribe(
       data => {
-        this.route.navigate(['/home/home/slider']);
+        this.route.navigate(['/dashboard/home/slider']);
       },
       error => {
         this.error = error;

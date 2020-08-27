@@ -5,26 +5,27 @@ import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/Operators';
 
+let endpoint = "http://localhost:8000";
+
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    private currentUserSubject: BehaviorSubject<User>;
-    public currentUser: Observable<User>;
+    private currentUserSubject: BehaviorSubject<any>;
+    public currentUser: Observable<any>;
     constructor(private http: HttpClient) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
     }
 
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
+    public get currentUserValue(): any {
+        return this.currentUserSubject;
     }
 
-
     login(username: string, password: string) {
-        return this.http.post<any>(`/users/authenticate`, { username, password })
-            .pipe(map(user => { console.log('user', user, user.token);
-                if (user && user.token) {
+        return this.http.post<any>(`${endpoint}/login`, { user_name:username, password:password })
+            .pipe(map(user => { //console.log('user', user, user.token);
+                if (user && user.success) {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.currentUserSubject.next(user);
                 }

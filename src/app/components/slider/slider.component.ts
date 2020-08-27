@@ -1,10 +1,10 @@
 import { Component, OnInit,  NgZone, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import {FormControl} from '@angular/forms';
-
+import { HomeService } from '../../services/home.service';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -17,11 +17,12 @@ export class SliderComponent implements OnInit {
   files = [];
   serializedDate = new FormControl((new Date()).toISOString());
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
-  constructor(private fb: FormBuilder, private _ngZone: NgZone) { }
-   taskForm = this.fb.group({
-    header: [""],
-    subHeader: [""],
-    files: [''],
+  constructor(private fb: FormBuilder, private _ngZone: NgZone, private slider: HomeService) { }
+   topSlider = this.fb.group({
+    header: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    sub_header: ["",  [Validators.required, Validators.minLength(10), Validators.maxLength(150)]],
+    text_content:[""],
+    files: ['', [Validators.required]],
   });
 
   public onChange( { editor }: ChangeEvent ) {
@@ -38,12 +39,28 @@ export class SliderComponent implements OnInit {
   }
 uploadFile(event) {
   console.log('events', event);
-  for (let index = 0; index < event.length; index++) {
-    const element = event[index];
-    this.files.push(element.name)
+  if(event.length <=1){
+    for (let index = 0; index < event.length; index++) {
+      const element = event[index];
+      this.files[0] = element.name; 
+    }
+    this.topSlider.get('files').setValue(event[0]);
   }
+  
 }
-deleteAttachment(index) {
-  this.files.splice(index, 1)
+// deleteAttachment(index) {
+//   //this.files.splice(index, 1)
+//   this.topSlider.value.files = '';
+// }
+saveTopSLider() {
+  const formData = new FormData();
+  formData.append('files', this.topSlider.get('files').value);
+  formData.append('header', this.topSlider.get('header').value);
+  formData.append('sub_header', this.topSlider.get('sub_header').value);
+  formData.append('text_content', this.topSlider.get('text_content').value);
+  console.log(this.topSlider.value);
+  this.slider.topSlider(formData).subscribe( res =>{
+    console.log(res);
+  });
 }
 }

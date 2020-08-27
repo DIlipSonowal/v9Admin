@@ -32,8 +32,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule, ReactiveFormsModule,
     AdminPanelModule,
   ],
-  providers: [  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  providers: [ /* { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, */
     fakeBackendProvider],
   exports: [SharedModule],
   bootstrap: [AppComponent]

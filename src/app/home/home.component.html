@@ -40,7 +40,7 @@
 <mat-sidenav-container>
  <mat-sidenav #sidenav>
    <mat-nav-list>
-    <a mat-list-item [routerLink]="'/dashboard/home/slider'"   [matMenuTriggerFor]="home" >  Home 	<mat-icon >arrow_right</mat-icon></a>
+    <a mat-list-item [routerLink]="'/dashboard/home/slider'"   [matMenuTriggerFor]="home" >  Home 	<mat-icon>arrow_right</mat-icon></a>
      <a mat-list-item [routerLink]="'/accounts'">  About 	<mat-icon>arrow_right</mat-icon></a>
      <a mat-list-item [routerLink]="'/create-account'">Contact Us 	<mat-icon>arrow_right</mat-icon> </a>
      <a mat-list-item [routerLink]="'/home/404'"> Services	<mat-icon>arrow_right</mat-icon> </a>
@@ -56,8 +56,8 @@
       <button mat-menu-item [matMenuTriggerFor]="invertebrates">New changes</button>
     </mat-menu>
 <mat-menu #changes="matMenu" >
- <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> Top Slider</a></button>
- <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> Our Goals</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/slider'"> Top Slider</a></button>
+ <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/goals'"> Our Goals</a></button>
  <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'"> About V9 Immigration</a></button>
  <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'">Why Choose Us</a></button>
  <button mat-menu-item >  <a mat-list-item [routerLink]="'/home/renderer'">Immigartion Service for you</a></button>

@@ -11,7 +11,7 @@
 </mat-toolbar>
  <form [formGroup]="loginForm">
    <div class="form-wraper">
-  <div class="form-container card">
+  <div fxFlex.lt-sm="100%" fxFlex.lt-xs="100%" class="form-container card">
     <div class="form-header header">
     <h2>Welcome Back!!</h2>
     </div>
@@ -19,15 +19,15 @@
     <div class="form-body">
 
       <mat-form-field class="justifier" appearance="outline">
-          <input matInput placeholder="Username"  formControlName="username"  text="email" class="form-input">
+          <input matInput placeholder="Username"  formControlName="username"  type="text" class="form-input">
       </mat-form-field>
       <mat-form-field class="justifier" appearance="outline">
-          <input matInput placeholder="Password" formControlName="password" text="password" class="form-input">
+          <input matInput placeholder="Password" formControlName="password" type="password" class="form-input">
       </mat-form-field>
     </div>
 
     <div class="form-footer">
-        <button mat-raised-button (click)="login()" class="btn custom-btn">
+        <button mat-raised-button (click)="login(loginForm.value)" class="btn custom-btn">
             <mat-icon>input</mat-icon> Login
         </button>
     </div>
