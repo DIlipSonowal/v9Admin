@@ -1,1 +1,113 @@
-<p>works works!</p>
+<div fxLayout="column" fxLayoutGap="20px" class="card-box  card">
+    <form [formGroup]="worksForms">
+      <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
+
+
+        <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+          <h3>
+            <span class="heading-title" id="attachment" title="">
+                <i class="fa fa-list" aria-hidden="true"  style="color: blue"></i> &nbsp;&nbsp;How It Works</span>
+          </h3>
+
+        </div>
+        <div fxFlex="100%" class="bg-grey">
+          <div fxFlex="30%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column" style="padding: 5px;">
+              <mat-label>Heading</mat-label>
+            <mat-form-field class="justifier" appearance="outline">
+              <input matInput placeholder="Header" formControlName="header" text="email" class="form-input">
+            </mat-form-field>
+            <mat-label>Title</mat-label>
+            <mat-form-field class="justifier" appearance="outline">
+              <input matInput placeholder="Title" formControlName="subHeader" text="email" class="form-input">
+            </mat-form-field> </div>
+
+        </div>
+      </div>
+      <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="5px">
+        <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+          <h4 class="header-title mt-0 mb-3 ">Icon Section</h4>
+        </div>
+      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+          <div  formArrayName="discussion"> <div class="alignCard">
+            <div>
+              <h4 class="header-title mt-0 mb-3 spacing">Discussion</h4>
+            </div>
+            <mat-form-field class="justifier" appearance="outline">
+                <input matInput placeholder="Header" formControlName="title"  class="form-input">
+              </mat-form-field>
+              <mat-form-field class="justifier" appearance="outline">
+                 <input matInput placeholder="Count" formControlName="count"  class="form-input">
+               </mat-form-field>
+               <mat-form-field class="justifier" appearance="outline">
+
+                   <textarea matInput class="form-input" placeholder="Description"
+                             cdkTextareaAutosize
+                             #autosize="cdkTextareaAutosize"
+                             cdkAutosizeMinRows="1"
+                             formControlName="para"
+                             cdkAutosizeMaxRows="5"></textarea>
+                 </mat-form-field>
+          </div>
+        </div>
+        </div>
+        <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+            <div  formArrayName="documentation"> <div class="alignCard">
+              <div>
+                <h4 class="header-title mt-0 mb-3 spacing">Documentation</h4>
+              </div>
+              <mat-form-field class="justifier" appearance="outline">
+                  <input matInput placeholder="Header" formControlName="title"  class="form-input">
+                </mat-form-field>
+                <mat-form-field class="justifier" appearance="outline">
+                   <input matInput placeholder="Count" formControlName="count"  class="form-input">
+                 </mat-form-field>
+                 <mat-form-field class="justifier" appearance="outline">
+
+                     <textarea matInput class="form-input" placeholder="Description"
+                               cdkTextareaAutosize
+                               #autosize="cdkTextareaAutosize"
+                               cdkAutosizeMinRows="1"
+                               formControlName="para"
+                               cdkAutosizeMaxRows="5"></textarea>
+                   </mat-form-field>
+            </div>
+          </div>
+          </div>
+          <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
+              <div  formArrayName="submission"> <div class="alignCard">
+                <div>
+                  <h4 class="header-title mt-0 mb-3 spacing">Submission</h4>
+                </div>
+                <mat-form-field class="justifier" appearance="outline">
+                    <input matInput placeholder="Header" formControlName="title"  class="form-input">
+                  </mat-form-field>
+                  <mat-form-field class="justifier" appearance="outline">
+                     <input matInput placeholder="Count" formControlName="count"  class="form-input">
+                   </mat-form-field>
+                   <mat-form-field class="justifier" appearance="outline">
+
+                       <textarea matInput class="form-input" placeholder="Description"
+                                 cdkTextareaAutosize
+                                 #autosize="cdkTextareaAutosize"
+                                 cdkAutosizeMinRows="1"
+                                 formControlName="para"
+                                 cdkAutosizeMaxRows="5"></textarea>
+                     </mat-form-field>
+
+              </div>
+            </div>
+            </div>
+      </div>
+      <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+        <div style="padding: 20px;">
+          <button mat-raised-button color="primary" (click)="resetForm()">Cancel</button>
+      </div>
+        <div style="padding: 20px;">
+          <button mat-raised-button color="secondary" (click)="serviceSubmit()">Submit</button>
+     </div>
+      </div>
+      <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
+
+      </div>
+    </form>
+  </div>

@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {UploadDirective} from '../directives/upload.directive';
 import { MainComponent } from '../main/main.component';
 
+
 @NgModule({
   declarations: [HomeComponent, CardComponent,
     CoutryGraphComponent, UploadDirective, MainComponent,

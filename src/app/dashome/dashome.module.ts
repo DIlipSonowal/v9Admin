@@ -13,15 +13,16 @@ import { ChooseUsComponent } from '../components/choose-us/choose-us.component';
 import { ServicesComponent } from '../components/services/services.component';
 import { WorksComponent } from '../components/works/works.component';
 import { TeamsComponent } from '../components/teams/teams.component';
+import { FeedbackComponent } from '../components/feedback/feedback.component';
 @NgModule({
   declarations: [DashomeComponent,  SliderComponent, GoalsComponent, AboutComponent,
-    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent],
+    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent, FeedbackComponent],
   imports: [
     FlexLayoutModule,
     CommonModule, RouterModule, FormsModule, ReactiveFormsModule, DashomeRoutingModule,SharedModule
   ],
   exports: [DashomeComponent, SliderComponent, GoalsComponent, AboutComponent,
-    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent],
+    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent, FeedbackComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashomeModule { }

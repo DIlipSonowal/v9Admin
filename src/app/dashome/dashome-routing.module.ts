@@ -8,6 +8,7 @@ import { ChooseUsComponent } from '../components/choose-us/choose-us.component';
 import { ServicesComponent } from '../components/services/services.component';
 import { WorksComponent } from '../components/works/works.component';
 import { TeamsComponent } from '../components/teams/teams.component';
+import { FeedbackComponent } from '../components/feedback/feedback.component';
 const dashboardRoutes: Routes = [
     {
         path: '', component: DashomeComponent, children: [
@@ -18,6 +19,7 @@ const dashboardRoutes: Routes = [
           { path: 'services', component:ServicesComponent },
           { path: 'works', component:WorksComponent },
           { path: 'teams', component:TeamsComponent },
+          { path: 'feedback', component:FeedbackComponent },
         ]
     },
 
