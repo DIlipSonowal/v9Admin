@@ -1,5 +1,5 @@
 <div fxFlexFill fxLayoutAlign="start stretch" fxLayout="row" fxLayoutGap="10px">
-    <div fxFlex="50%"> <form [formGroup]="taskForm">
+    <div fxFlex="50%"> <form [formGroup]="aboutForm">
        <div fxLayout="row wrap " class="card-box  card">
          <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
            <h3>  <span class="heading-title" id="attachment" title="">
@@ -7,35 +7,32 @@
          </div>
          <div fxFlex="100%" class="bg-grey">
          <div fxFlex="50%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column" style="padding: 5px;">
+          
+           <mat-form-field class="justifier" appearance="outline">
+              <input matInput placeholder="Sub header" formControlName="sub_header" class="form-input">
+            </mat-form-field>
 
-           <mat-form-field class="justifier" appearance="outline">
-             <input matInput placeholder="Header" formControlName="header" text="email" class="form-input">
-           </mat-form-field>
-           <mat-form-field class="justifier" appearance="outline">
-              <input matInput placeholder="Sub header" formControlName="subHeader" text="email" class="form-input">
+            <mat-form-field class="justifier" appearance="outline">
+              <input matInput placeholder="Header" formControlName="header" class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
 
-                <textarea matInput class="form-input" formControlName="des"  placeholder="Description"
+                <textarea matInput class="form-input" formControlName="text_content"  placeholder="Description"
                           cdkTextareaAutosize
                           #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMinRows="3"
                           cdkAutosizeMaxRows="5"></textarea>
               </mat-form-field>
 
-
-
            </div>
              </div>
-         <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+         <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">          
            <div style="padding: 20px;">
-             <button mat-raised-button color="primary">Cancel</button>
-
+             <button mat-raised-button color="secondary" [disabled]="!aboutForm.valid" (click)="saveAbout()">Submit</button>
            </div>
            <div style="padding: 20px;">
-             <button mat-raised-button color="secondary">Submit</button>
-
-           </div>
+            <button mat-raised-button color="primary">Cancel</button>
+          </div>
          </div>
        </div>
      </form>

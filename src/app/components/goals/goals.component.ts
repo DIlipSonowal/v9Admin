@@ -54,7 +54,7 @@ export class GoalsComponent implements OnInit {
 
   savegoalSLider() {
     const formData = new FormData();
-    console.log(this.final_files);
+    //console.log(this.final_files);
     //let images = [];
     for(let i=0; i< this.final_files.length; i++) {
       formData.append(`images`, this.final_files[i]);

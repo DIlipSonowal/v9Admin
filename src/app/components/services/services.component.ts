@@ -1,9 +1,10 @@
 import { Component, OnInit,  NgZone, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
-import {FormControl} from '@angular/forms';
+import { HomeService } from '../../services/home.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-services',
@@ -11,43 +12,44 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
-  files = []; filesCountry =[];formArr: FormArray;city = []; other = []; work = []; study = []; visit = [];
+  files = ["","","",""]; filesCountry =[]; formArr: FormArray;
+  final_files = ["","","",""];
   @ViewChild('autosize') autosize: CdkTextareaAutosize; visaIcon = [];
   header: any;
-  constructor(private fb: FormBuilder, private _ngZone: NgZone) { }
+  constructor(private fb: FormBuilder, private _ngZone: NgZone, private hs:HomeService, private _snackBar: MatSnackBar) { }
   serviceForm = this.fb.group({
-    title: [""],
-    des: [""],
+    header: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+    description: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(300)]],
     family: this.fb.group({
-      title: [""],
-      para: [''],
-      icon: ['']
+      title: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(300)]],
+      img: ['',[Validators.required]]
     }),
     work: this.fb.group({
-      title: [""],
-      para: [''],
-      icon: ['']
+      title: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(300)]],
+      img: ['',[Validators.required]]
     }),
     study: this.fb.group({
-      title: [""],
-      para: [''],
-      icon: ['']
+      title: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(300)]],
+      img: ['',[Validators.required]]
     }),
     visit: this.fb.group({
-      title: [""],
-      para: [''],
-      icon: ['']
+      title: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(300)]],
+      img: ['',[Validators.required]]
     }),
     citizenship: this.fb.group({
-      title: [""],
-      para: [''],
-      icon: ['']
+      title: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(300)]],
+      img: ['',[Validators.required]]
     }),
     other: this.fb.group({
-      title: [""],
-      para: [''],
-      icon: ['']
-    }),
+      title: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(300)]],
+      img: ['',[Validators.required]]
+    })
   });
 
   public onChange( { editor }: ChangeEvent ) {
@@ -62,85 +64,37 @@ export class ServicesComponent implements OnInit {
     this._ngZone.onStable.pipe(take(1))
         .subscribe(() => this.autosize.resizeToFitContent(true));
   }
-  uploadFile(event) {
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.files.push(element.name)
-    }
+  uploadFile(event, i) {
+    this.files[i] = event[0].name;
+    this.final_files[i] = event[0];
   }
-  uploadFileCountry(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.filesCountry.push(element.name)
-    }
+
+  deleteAttachment(index, fg) {
+    this.files[index] = "";
+    this.final_files[index] = "";
+    this.serviceForm.value[fg].img = "";
   }
-  deleteAttachment(index) {
-    this.files.splice(index, 1)
-  }
-  uploadVisaIcon(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.visaIcon.push(element.name)
-    }
-  }
-  deleteVisaAttachment(index) {
-    this.visaIcon.splice(index, 1)
-  }
-  uploadCityVisaIcon(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.city.push(element.name)
-    }
-  }
-  uploadOtherVisaIcon(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.other.push(element.name)
-    }
-  }
-  uploadFileWork(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.work.push(element.name)
-    }
-  }
-  uploadFileStudy(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.study.push(element.name)
-    }
-  }
-  uploadFileVisit(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.visit.push(element.name)
-    }
-  }
-  deleteCityAttachment(index) {
-    this.city.splice(index, 1)
-  }
-  deleteOtherAttachment(index) {
-    this.other.splice(index, 1)
-  }
-  deleteAttachmentWork(index) {
-    this.work.splice(index, 1)
-  }
-  deleteAttachmentStudy(index) {
-    this.study.splice(index, 1)
-  }
-  deleteAttachmentVisit(index) {
-    this.visit.splice(index, 1)
-  }
+  
   serviceSubmit(){
-    console.log('values', this.serviceForm.value);
+    //console.log('values', this.serviceForm.value);
+    const formData = new FormData();
+    for(let i=0; i< this.final_files.length; i++) {
+      formData.append(`images`, this.final_files[i]);
+    }
+    formData.append('header', this.serviceForm.get('header').value);
+    formData.append('sub_header', this.serviceForm.get('description').value);
+    formData.append('family', JSON.stringify(this.serviceForm.value.family));
+    formData.append('work', JSON.stringify(this.serviceForm.value.work));
+    formData.append('study', JSON.stringify(this.serviceForm.value.study));
+    formData.append('visit', JSON.stringify(this.serviceForm.value.visit));
+    formData.append('citizenship', JSON.stringify(this.serviceForm.value.citizenship));
+    formData.append('other', JSON.stringify(this.serviceForm.value.other));
+    this.hs.immigrationService(formData).subscribe( (res:any)=>{
+      this._snackBar.open(res.message, 'Close', {
+        duration: 3000,
+        verticalPosition :'top' 
+      });
+    });
   }
   resetForm(){
     this.serviceForm.reset();

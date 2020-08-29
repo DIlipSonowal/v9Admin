@@ -2,7 +2,6 @@
   <form [formGroup]="serviceForm">
     <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
 
-
       <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
         <h3>
           <span class="heading-title" id="attachment" title="">
@@ -12,20 +11,16 @@
       </div>
       <div fxFlex="100%" class="bg-grey">
         <div fxFlex="30%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column" style="padding: 5px;">
-          <mat-label>Title</mat-label>
+          <mat-label>Header</mat-label>
           <mat-form-field class="justifier" appearance="outline">
-            <input matInput placeholder="Title" formControlName="title" type="text" class="form-input">
+            <input matInput placeholder="Title" formControlName="header" type="text" class="form-input">
           </mat-form-field>
           <mat-label>Description</mat-label>
           <mat-form-field class="justifier" appearance="outline">
-
-            <textarea matInput class="form-input" formControlName="des" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            <textarea matInput class="form-input" formControlName="description" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
               cdkAutosizeMaxRows="5"></textarea>
           </mat-form-field>
-
-
         </div>
-
       </div>
     </div>
     <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="5px">
@@ -42,8 +37,7 @@
               <input matInput placeholder="Header" formControlName="title"  class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -51,13 +45,13 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
 
-              <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
-                <input hidden type="file" formControlName="icon" #fileInput (change)="uploadFile($event.target.files)">
+              <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event, '0')">
+                <input hidden type="file" formControlName="img" #fileInput (change)="uploadFile($event.target.files, '0')">
               </div>
 
-              <div class="files-list" *ngFor="let file of files;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachment(i)">
+              <div class="files-list" *ngIf="files[0]">
+                <p> {{ files[0] }} </p>
+                <button class="delete-file" (click)="deleteAttachment('0','family')">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
@@ -75,8 +69,7 @@
               <input matInput placeholder="Header" formControlName="title"  class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -84,13 +77,13 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
 
-              <div class="uploadfilecontainer" (click)="fileInput2.click()" appUpload (onFileDropped)="uploadFileWork($event)">
-                <input hidden type="file" formControlName="icon" #fileInput2 (change)="uploadFileWork($event.target.files)">
+              <div class="uploadfilecontainer" (click)="fileInput1.click()" appUpload (onFileDropped)="uploadFile($event, '1')">
+                <input hidden type="file" formControlName="img" #fileInput1 (change)="uploadFile($event.target.files, '1')">
               </div>
 
-              <div class="files-list" *ngFor="let file of work;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachmentWork(i)">
+              <div class="files-list" *ngIf="files[1]">
+                <p> {{ files[1] }} </p>
+                <button class="delete-file" (click)="deleteAttachment('1','work')">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
@@ -108,8 +101,7 @@
               <input matInput placeholder="Header" formControlName="title"  class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -117,13 +109,13 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
 
-              <div class="uploadfilecontainer" (click)="fileInput3.click()" appUpload (onFileDropped)="uploadFileStudy($event)">
-                <input hidden type="file" formControlName="icon" #fileInput3 (change)="uploadFileStudy($event.target.files)">
+              <div class="uploadfilecontainer" (click)="fileInput2.click()" appUpload (onFileDropped)="uploadFile($event, '2')">
+                <input hidden type="file" formControlName="img" #fileInput2 (change)="uploadFile($event.target.files, '2')">
               </div>
 
-              <div class="files-list" *ngFor="let file of study;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachmentStudy(i)">
+              <div class="files-list" *ngIf="files[2]">
+                <p> {{ files[2] }} </p>
+                <button class="delete-file" (click)="deleteAttachment('2','study')">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
@@ -144,8 +136,7 @@
               <input matInput placeholder="Header" formControlName="title"  class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -153,13 +144,13 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
 
-              <div class="uploadfilecontainer" (click)="fileInput4.click()" appUpload (onFileDropped)="uploadFileVisit($event)">
-                <input hidden type="file" formControlName="icon" #fileInput4 (change)="uploadFileVisit($event.target.files)">
+              <div class="uploadfilecontainer" (click)="fileInput3.click()" appUpload (onFileDropped)="uploadFile($event, '3')">
+                <input hidden type="file" formControlName="img" #fileInput3 (change)="uploadFile($event.target.files, '3')">
               </div>
 
-              <div class="files-list" *ngFor="let file of visit;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachmentVisit(i)">
+              <div class="files-list" *ngIf="files[3]">
+                <p> {{ files[3] }} </p>
+                <button class="delete-file" (click)="deleteAttachment('3','visit')">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
@@ -174,11 +165,10 @@
               <h4 class="header-title mt-0 mb-3 spacing">Citizenship Visa</h4>
             </div>
             <mat-form-field class="justifier" appearance="outline">
-              <input matInput placeholder="Header" formControlName="title" text="email" class="form-input">
+              <input matInput placeholder="Header" formControlName="title"  class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -186,13 +176,13 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
 
-              <div class="uploadfilecontainer" (click)="fileInput5.click()" appUpload (onFileDropped)="uploadCityVisaIcon($event)">
-                <input hidden type="file" formControlName="icon" #fileInput5 (change)="uploadCityVisaIcon($event.target.files)">
+              <div class="uploadfilecontainer" (click)="fileInput4.click()" appUpload (onFileDropped)="uploadFile($event, '4')">
+                <input hidden type="file" formControlName="img" #fileInput4 (change)="uploadFile($event.target.files, '4')">
               </div>
 
-              <div class="files-list" *ngFor="let file of city;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteCityAttachment(i)">
+              <div class="files-list" *ngIf="files[4]">
+                <p> {{ files[4] }} </p>
+                <button class="delete-file" (click)="deleteAttachment('4','citizenship')">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
@@ -207,11 +197,10 @@
               <h4 class="header-title mt-0 mb-3 spacing">Other Visa</h4>
             </div>
             <mat-form-field class="justifier" appearance="outline">
-              <input matInput placeholder="Header" formControlName="title" class="form-input">
+              <input matInput placeholder="Header" formControlName="title"  class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -219,13 +208,13 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
 
-              <div class="uploadfilecontainer" (click)="fileVisa6.click()" appUpload (onFileDropped)="uploadFile($event)">
-                <input hidden type="file" formControlName="icon" #fileVisa6 (change)="uploadVisaIcon($event.target.files)">
+              <div class="uploadfilecontainer" (click)="fileInput5.click()" appUpload (onFileDropped)="uploadFile($event, '5')">
+                <input hidden type="file" formControlName="img" #fileInput5 (change)="uploadFile($event.target.files, '5')">
               </div>
 
-              <div class="files-list" *ngFor="let visa of visaIcon;let i= index">
-                <p> {{ visa }} </p>
-                <button class="delete-file" (click)="deleteVisaAttachment(i)">
+              <div class="files-list" *ngIf="files[5]">
+                <p> {{ files[5] }} </p>
+                <button class="delete-file" (click)="deleteAttachment('5','other')">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
@@ -235,13 +224,15 @@
       </div>
 
     </div>
-    <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+    <div fxFlex="100%" class="bg-white" fxLayoutAlign="center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+      
+      <div style="padding: 20px;">
+        <button mat-raised-button color="secondary" [disabled]="!serviceForm.valid" (click)="serviceSubmit()">Submit</button>
+      </div>
       <div style="padding: 20px;">
         <button mat-raised-button color="primary" (click)="resetForm()">Cancel</button>
       </div>
-      <div style="padding: 20px;">
-        <button mat-raised-button color="secondary" (click)="serviceSubmit()">Submit</button>
-      </div>
+
     </div>
     <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
 
