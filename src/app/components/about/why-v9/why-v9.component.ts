@@ -1,26 +1,29 @@
 import { Component, OnInit,  NgZone, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import {FormControl} from '@angular/forms';
-import { HomeService } from '../../services/home.service';
+import { HomeService } from '../../../services/home.service';
+
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  selector: 'app-why-v9',
+  templateUrl: './why-v9.component.html',
+  styleUrls: ['./why-v9.component.scss']
 })
-export class SliderComponent implements OnInit {
- date = new FormControl(new Date());
-  files = [];
+export class WhyV9Component implements OnInit {
+  date = new FormControl(new Date());
+  files = []; listAdd: FormArray;
   serializedDate = new FormControl((new Date()).toISOString());
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   constructor(private fb: FormBuilder, private _ngZone: NgZone, private slider: HomeService) { }
-   topSlider = this.fb.group({
-    header: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-    sub_header: ["",  [Validators.required, Validators.minLength(10), Validators.maxLength(150)]],
-    text_content:[""],
+   whyChooseUs = this.fb.group({
+    header: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+    text_content: ['', [Validators.required, Validators.minLength(50), Validators.maxLength(1000)]],
     files: ['', [Validators.required]],
+    lists: this.fb.array([
+      this.fb.group({list:['']})
+    ]),
   });
 
   public onChange( { editor }: ChangeEvent ) {
@@ -42,32 +45,32 @@ uploadFile(event) {
       const element = event[index];
       this.files[0] = element.name;
     }
-    this.topSlider.get('files').setValue(event[0]);
+    this.whyChooseUs.get('files').setValue(event[0]);
   }
 
 }
-// deleteAttachment(index) {
-//   //this.files.splice(index, 1)
-//   this.topSlider.value.files = '';
-// }
 saveTopSLider() {
   const formData = new FormData();
-  formData.append('files', this.topSlider.get('files').value);
-  formData.append('header', this.topSlider.get('header').value);
-  formData.append('sub_header', this.topSlider.get('sub_header').value);
-  formData.append('text_content', this.topSlider.get('text_content').value);
-  console.log(this.topSlider.value);
+  formData.append('files', this.whyChooseUs.get('files').value);
+  formData.append('header', this.whyChooseUs.get('header').value);
+  formData.append('sub_header', this.whyChooseUs.get('sub_header').value);
+  formData.append('text_content', this.whyChooseUs.get('text_content').value);
+  console.log(this.whyChooseUs.value);
   this.slider.topSlider(formData).subscribe( res =>{
     console.log(res);
   });
 }
-
 ngAfterViewInit(){
- // const execSync = require('child_process').execSync;
- // replace ^ if using ES modules
-// const output = execSync('dir', { encoding: 'utf-8' });  // the default is 'buffer'
-// console.log('Output was:\n', output);
 }
-
-
+resetForm(){
+  this.whyChooseUs.reset();
+}
+addLists(){
+   this.listAdd = this.whyChooseUs.controls.lists as FormArray;
+  this.listAdd.push(
+    this.fb.group({list:['']}));
+}
+deleteList(index){
+ this.listAdd.removeAt(index);
+}
 }

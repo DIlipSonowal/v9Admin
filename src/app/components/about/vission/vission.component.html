@@ -1,0 +1,53 @@
+<div  fxLayout="column" fxLayoutGap="20px">
+    <form [formGroup]="vissionForm">
+         <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="40px">
+          <div class="card-box  card " fxFlex="50%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column"> <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+              <h3>
+                  <span class="heading-title" id="attachment" title="">
+                      <i class="fa fa-th-list" aria-hidden="true" style="color: blue"></i> &nbsp;&nbsp;Our Vission</span>
+                </h3>
+           </div>
+           <div fxFlex="100%" class="bg-grey">
+           <div fxFlex="50%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column" style="padding: 5px;">
+             <mat-label>Header</mat-label>
+              <mat-form-field class="justifier" appearance="outline">
+               <input matInput placeholder="Header" formControlName="header" class="form-input">
+              </mat-form-field>
+              <mat-label>Description</mat-label>
+              <mat-form-field class="justifier" appearance="outline">
+
+                <textarea matInput class="form-input" formControlName="text_content"  placeholder="Description"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="3"
+                          cdkAutosizeMaxRows="5"></textarea>
+              </mat-form-field>
+              <mat-label>Image</mat-label>
+             <span class="heading-title" id="attachment" title="">
+               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachment</span>
+
+               <div class="filesStyling">
+
+               <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
+                 <input hidden type="file" accept="image/*" formControlName="files" #fileInput (change)="uploadFile($event.target.files)">
+               </div>
+
+               <div class="files-list" *ngFor="let file of files;let i= index">
+                 <p> {{ file }} </p>
+                <!--<button class="delete-file" (click)="deleteAttachment(i)">
+                   <img src="../../assets/Recycle_Bin_Full.png">
+                 </button>-->
+               </div>
+             </div>
+            </div>
+        </div>
+           <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+             <div style="padding: 20px;">
+               <button mat-raised-button color="secondary" [disabled]="!vissionForm.valid" (click)="saveTopSLider()">Submit</button>&nbsp;
+               <button mat-raised-button color="primary" (click)="resetForm()">Cancel</button>
+             </div>
+           </div>
+           </div>
+         </div>
+       </form>
+     </div>

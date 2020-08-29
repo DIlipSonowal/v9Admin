@@ -41,7 +41,7 @@
  <mat-sidenav #sidenav>
    <mat-nav-list>
     <a mat-list-item [routerLink]="'/dashboard/home/slider'"   [matMenuTriggerFor]="home" >  Home 	<mat-icon >arrow_right</mat-icon></a>
-     <a mat-list-item [routerLink]="'/dashboard/home/about'">  About 	<mat-icon>arrow_right</mat-icon></a>
+     <a mat-list-item [routerLink]="'/dashboard/home/about'" [matMenuTriggerFor]="about">  About 	<mat-icon>arrow_right</mat-icon></a>
      <a mat-list-item [routerLink]="'/create-account'">Contact Us 	<mat-icon>arrow_right</mat-icon> </a>
      <a mat-list-item [routerLink]="'/dashboard/home/services'"> Services	<mat-icon>arrow_right</mat-icon> </a>
      <a mat-list-item [routerLink]="'/home/500'">Visa 	<mat-icon>arrow_right</mat-icon></a>
@@ -64,7 +64,14 @@
  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/feedback'">User Feedback</a></button>
  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/team'">Team</a></button>
 </mat-menu>
-
+<mat-menu #about="matMenu" >
+  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/why-us'">Why Choose us</a></button>
+  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/mission'"> Our Mission</a></button>
+  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/vission'"> Our Vission</a></button>
+  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/choose-us'">Why Choose Us</a></button>
+  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/services'">Immigartion Service for you</a></button>
+  <button mat-menu-item >  <a mat-list-item [routerLink]="'/dashboard/home/works'">Three Simple Steps</a></button>
+ </mat-menu>
 <mat-menu #vertebrates="matMenu">
  <button mat-menu-item [matMenuTriggerFor]="Renderer">
      Renderer
