@@ -1,0 +1,34 @@
+.card-box {
+  margin: 17px;
+  background: #ffffff;
+}
+.form-container{
+width: 100%
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0em 0 0.5em 0 !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  background: #fff;
+}
+.form-container-bg{
+  background: #f9f9f9 !important;
+}
+mat-form-field {
+  margin-right: 12px;
+}
+form{
+  display: block !important;
+}
+.filesStyling{
+  margin: 1rem 1rem;
+}
+.bg-grey {
+  padding: 10px;
+}
+h4{
+  margin-bottom: 0px !important;
+}
+h4.spacing{
+  padding-bottom: 10px;
+}

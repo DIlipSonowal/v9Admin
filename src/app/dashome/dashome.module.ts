@@ -17,17 +17,20 @@ import { FeedbackComponent } from '../components/feedback/feedback.component';
 import { WhyV9Component } from '../components/about/why-v9/why-v9.component';
 import { MissionComponent } from '../components/about/mission/mission.component';
 import { VissionComponent } from '../components/about/vission/vission.component';
+import { OurValuesComponent } from '../components/our-values/our-values.component';
+import {CeoComponent} from '../components/ceo/ceo.component';
 @NgModule({
   declarations: [DashomeComponent,  SliderComponent, GoalsComponent, AboutComponent,
     ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent,
-     FeedbackComponent, WhyV9Component, MissionComponent, VissionComponent],
+     FeedbackComponent, WhyV9Component, MissionComponent, VissionComponent, OurValuesComponent, CeoComponent],
   imports: [
     FlexLayoutModule,
-    CommonModule, RouterModule, FormsModule, ReactiveFormsModule, DashomeRoutingModule,SharedModule
+    CommonModule, RouterModule, FormsModule, ReactiveFormsModule, DashomeRoutingModule,
+    SharedModule
   ],
   exports: [DashomeComponent, SliderComponent, GoalsComponent, AboutComponent,WhyV9Component,
     ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent,
-    FeedbackComponent, MissionComponent, VissionComponent],
+    FeedbackComponent, MissionComponent, VissionComponent, OurValuesComponent, CeoComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashomeModule { }
