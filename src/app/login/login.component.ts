@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
    console.log('cursee', auth.currentUserValue);
    if (auth.currentUserValue) {
      console.log(auth.currentUserValue);
-     this.route.navigate(['/dashboard']);
+    // this.route.navigate(['/dashboard']);
    }
   }
 

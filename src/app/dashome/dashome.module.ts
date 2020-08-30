@@ -14,15 +14,22 @@ import { ServicesComponent } from '../components/services/services.component';
 import { WorksComponent } from '../components/works/works.component';
 import { TeamsComponent } from '../components/teams/teams.component';
 import { FeedbackComponent } from '../components/feedback/feedback.component';
+import { WhyV9Component } from '../components/about/why-v9/why-v9.component';
+import { MissionComponent } from '../components/about/mission/mission.component';
+import { VissionComponent } from '../components/about/vission/vission.component';
+import { CeoComponent } from '../components/ceo/ceo.component';
+import { OurValuesComponent } from '../components/our-values/our-values.component';
 @NgModule({
   declarations: [DashomeComponent,  SliderComponent, GoalsComponent, AboutComponent,
-    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent, FeedbackComponent],
+    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent,
+     FeedbackComponent, WhyV9Component, MissionComponent, VissionComponent, CeoComponent, OurValuesComponent],
   imports: [
     FlexLayoutModule,
     CommonModule, RouterModule, FormsModule, ReactiveFormsModule, DashomeRoutingModule,SharedModule
   ],
-  exports: [DashomeComponent, SliderComponent, GoalsComponent, AboutComponent,
-    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent, FeedbackComponent],
+  exports: [DashomeComponent, SliderComponent, GoalsComponent, AboutComponent,WhyV9Component,
+    ChooseUsComponent, ServicesComponent, ServicesComponent, WorksComponent, TeamsComponent,
+    FeedbackComponent, MissionComponent, VissionComponent, CeoComponent, OurValuesComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashomeModule { }

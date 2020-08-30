@@ -1,8 +1,8 @@
 <div fxFlexFill fxLayoutAlign="start stretch" fxLayout="row" fxLayoutGap="10px">
-    <div fxFlex="50%"> <form [formGroup]="goalsForm">
+    <div fxFlex="50%"> <form [formGroup]="ceoForm">
        <div fxLayout="row wrap " class="card-box  card">
          <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
-           <h3> Our Goals</h3>
+           <h3>CEO Details</h3>
          </div>
          <div fxFlex="100%" class="bg-grey">
          <div fxFlex="50%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column" style="padding: 5px;">
@@ -11,7 +11,10 @@
              <input matInput placeholder="Header" formControlName="header" class="form-input">
            </mat-form-field>
            <mat-form-field class="justifier" appearance="outline">
-              <input matInput placeholder="Sub header" formControlName="sub_header" class="form-input">
+              <input matInput placeholder="Name" formControlName="name" class="form-input">
+            </mat-form-field>
+           <mat-form-field class="justifier" appearance="outline">
+              <input matInput placeholder="Sub Title" formControlName="sub_title" class="form-input">
             </mat-form-field>
             <mat-form-field class="justifier" appearance="outline">
                 <textarea matInput class="form-input" placeholder="Description"
@@ -27,7 +30,7 @@
            <div class="filesStyling">
 
              <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
-               <input hidden type="file" accept="image/*" formControlName="files" #fileInput (change)="uploadFile($event.target.files)">
+               <input hidden type="file" formControlName="files" #fileInput (change)="uploadFile($event.target.files)">
              </div>
 
              <div class="files-list" *ngFor="let file of files;let i= index">
@@ -39,9 +42,9 @@
            </div>
           </div>
              </div>
-         <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">        
+         <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
               <div style="padding: 20px;">
-                <button mat-raised-button color="secondary"  [disabled]="!goalsForm.valid" (click)="savegoalSLider()">Submit</button>
+                <button mat-raised-button color="secondary"  [disabled]="!ceoForm.valid" (click)="saveForm()">Submit</button>
               </div>
               <div style="padding: 20px;">
                 <button mat-raised-button color="primary">Cancel</button>

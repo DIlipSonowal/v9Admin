@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutGap="20px" class="card-box  card">
-  <form [formGroup]="taskForm">
+  <form  fxFlex="100%" [formGroup]="taskForm">
     <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
 
 
@@ -18,7 +18,7 @@
 
             <mat-form-field class="justifier" appearance="outline">
               <input matInput placeholder="Big Header" formControlName="header" class="form-input">
-            </mat-form-field>       
+            </mat-form-field>
         </div>
 
       </div>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
-        <div formArrayName="student"> 
+        <div formArrayName="student">
           <div class="alignCard">
           <div>
             <h4 class="header-title mt-0 mb-3">Students</h4>
@@ -41,7 +41,7 @@
             <mat-form-field class="justifier" appearance="outline">
                <input matInput placeholder="Title 1" formControlName="title1" class="form-input">
             </mat-form-field>
-             
+
             <mat-form-field class="justifier" appearance="outline">
               <input matInput placeholder="Title 2" formControlName="title2" class="form-input">
            </mat-form-field>
@@ -50,7 +50,7 @@
               <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
             <div class="filesStyling">
               <div class="uploadfilecontainer" (click)="fileInput1.click()" appUpload (onFileDropped)="uploadFile($event,'0')">
-                <input hidden type="file" formControlName="icon" #fileInput1 (change)="uploadFile($event.target.files, '0')">
+                <input hidden type="file" accept="image/*" formControlName="icon" #fileInput1 (change)="uploadFile($event.target.files, '0')">
               </div>
 
               <div class="files-list" *ngIf="files[0]">
@@ -77,7 +77,7 @@
           <mat-form-field class="justifier" appearance="outline">
              <input matInput placeholder="Title 1" formControlName="title1" class="form-input">
           </mat-form-field>
-           
+
           <mat-form-field class="justifier" appearance="outline">
             <input matInput placeholder="Title 2" formControlName="title2" class="form-input">
           </mat-form-field>
@@ -87,7 +87,7 @@
             <div class="filesStyling">
 
               <div class="uploadfilecontainer" (click)="fileInput2.click()" appUpload (onFileDropped)="uploadFile($event,'1')">
-                <input hidden type="file" formControlName="icon" #fileInput2 (change)="uploadFile($event.target.files,'1')">
+                <input hidden type="file" accept="image/*" formControlName="icon" #fileInput2 (change)="uploadFile($event.target.files,'1')">
               </div>
 
               <div class="files-list" *ngIf="files[1]">
@@ -106,7 +106,7 @@
             <div>
               <h4 class="header-title mt-0 mb-3">Customers</h4>
             </div>
-            
+
             <mat-form-field class="justifier" appearance="outline">
               <input matInput placeholder="Count" formControlName="count" class="form-input">
             </mat-form-field>
@@ -114,7 +114,7 @@
             <mat-form-field class="justifier" appearance="outline">
                <input matInput placeholder="Title 1" formControlName="title1" class="form-input">
             </mat-form-field>
-             
+
             <mat-form-field class="justifier" appearance="outline">
               <input matInput placeholder="Title 2" formControlName="title2" class="form-input">
             </mat-form-field>
@@ -124,7 +124,7 @@
               <div class="filesStyling">
 
                 <div class="uploadfilecontainer" (click)="fileInput3.click()" appUpload (onFileDropped)="uploadFile($event,'2')">
-                  <input hidden type="file" formControlName="icon" #fileInput3 (change)="uploadFile($event.target.files,'2')">
+                  <input hidden type="file" accept="image/*" formControlName="icon" #fileInput3 (change)="uploadFile($event.target.files,'2')">
                 </div>
 
                 <div class="files-list" *ngIf="files[2]">
@@ -137,7 +137,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
               <div  formArrayName="country"> <div class="alignCard">
                 <div>
@@ -147,11 +147,11 @@
                 <mat-form-field class="justifier" appearance="outline">
                   <input matInput placeholder="Count" formControlName="count" class="form-input">
                 </mat-form-field>
-    
+
                 <mat-form-field class="justifier" appearance="outline">
                    <input matInput placeholder="Title 1" formControlName="title1" class="form-input">
                 </mat-form-field>
-                 
+
                 <mat-form-field class="justifier" appearance="outline">
                   <input matInput placeholder="Title 2" formControlName="title2" class="form-input">
                 </mat-form-field>
@@ -161,7 +161,7 @@
                   <div class="filesStyling">
 
                     <div class="uploadfilecontainer" (click)="fileInputCountry.click()" appUpload (onFileDropped)="uploadFile($event,'3')">
-                      <input hidden type="file" formControlName="icon" #fileInputCountry (change)="uploadFile($event.target.files,'3')">
+                      <input hidden type="file" accept="image/*" formControlName="icon" #fileInputCountry (change)="uploadFile($event.target.files,'3')">
                     </div>
 
                     <div class="files-list" *ngIf="files[3]">
@@ -177,7 +177,7 @@
 
     </div>
     <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
-      
+
       <div style="padding: 20px;">
         <button mat-raised-button color="secondary" [disabled]="!taskForm.valid" (click)="serviceSubmit()">Submit</button>
       </div>

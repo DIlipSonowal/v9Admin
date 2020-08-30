@@ -3,7 +3,7 @@
     <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
 
 
-      <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
+      <div fxFlex.lt-sm="100%" fxFlex.lt-md="33%" style="padding: 5px;">
         <h3>
           <span class="heading-title" id="attachment" title="">
             <i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: blue"></i> &nbsp;&nbsp;User Feedback</span>
@@ -12,14 +12,13 @@
       </div>
     </div>
     <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="5px">
-      <div fxFlex="100%" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
-        <h4 class="header-title mt-0 mb-3">Icon Section</h4>
+      <div fxFlex.lt-sm="100%" fxFlex.lt-md="33%" style="padding: 5px;">
+        <h4>&nbsp;</h4>
       </div>
-      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
-        <div formArrayName="section1">
+      <div class="card-box  card" fxFlex.lt-sm="100%" fxFlex.lt-md="33%" fxLayout="column">
           <div class="alignCard">
             <div>
-              <h4 class="header-title mt-0 mb-3 spacing">Section 1</h4>
+              <h4 class="header-title mt-0 mb-3 spacing">&nbsp;</h4>
             </div>
             <mat-form-field class="justifier" appearance="outline">
               <input matInput placeholder="Name" formControlName="name"  class="form-input">
@@ -27,7 +26,7 @@
 
             <mat-form-field class="justifier" appearance="outline">
 
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              <textarea matInput class="form-input" placeholder="Feedback" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
                 formControlName="para" cdkAutosizeMaxRows="5"></textarea>
             </mat-form-field>
 
@@ -36,98 +35,24 @@
             <div class="filesStyling">
 
               <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
-                <input hidden type="file" formControlName="icon" #fileInput (change)="uploadFile($event.target.files)">
+                <input hidden type="file" accept="image/*" formControlName="icon" #fileInput (change)="uploadFile($event.target.files)">
               </div>
 
-              <div class="files-list" *ngFor="let file of files;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachment(i)">
+              <div class="files-list" *ngIf="files[0]">
+                <p> {{ files[0] }} </p>
+                <button class="delete-file" (click)="deleteAttachment()">
                   <img src="../../assets/Recycle_Bin_Full.png">
                 </button>
               </div>
             </div>
+            <div style="padding: 20px; text-align: right;">
+              <button mat-raised-button color="secondary" [disabled]="!feedbackForm.valid" (click)="serviceSubmit()">Submit</button> &nbsp;&nbsp;
+              <button mat-raised-button color="primary" (click)="resetForm()">Cancel</button>
+            </div>       
           </div>
-        </div>
-      </div>
-      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
-        <div formArrayName="section2">
-          <div class="alignCard">
-            <div>
-              <h4 class="header-title mt-0 mb-3 spacing">Section 2</h4>
-            </div>
-            <mat-form-field class="justifier" appearance="outline">
-              <input matInput placeholder="Name" formControlName="name"  class="form-input">
-            </mat-form-field>
-            <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                formControlName="para" cdkAutosizeMaxRows="5"></textarea>
-            </mat-form-field>
-
-            <span class="heading-title" id="attachment" title="">
-              <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
-            <div class="filesStyling">
-
-              <div class="uploadfilecontainer" (click)="fileInput2.click()" appUpload (onFileDropped)="uploadFile2($event)">
-                <input hidden type="file" formControlName="icon" #fileInput2 (change)="uploadFile2($event.target.files)">
-              </div>
-
-              <div class="files-list" *ngFor="let file of files2;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachment2(i)">
-                  <img src="../../assets/Recycle_Bin_Full.png">
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-box  card" fxFlex fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxLayout="column">
-        <div formArrayName="section3">
-          <div class="alignCard">
-            <div>
-              <h4 class="header-title mt-0 mb-3 spacing">Section 3</h4>
-            </div>
-            <mat-form-field class="justifier" appearance="outline">
-              <input matInput placeholder="Name" formControlName="name"  class="form-input">
-            </mat-form-field>
-
-            <mat-form-field class="justifier" appearance="outline">
-
-              <textarea matInput class="form-input" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                formControlName="para" cdkAutosizeMaxRows="5"></textarea>
-            </mat-form-field>
-
-            <span class="heading-title" id="attachment" title="">
-              <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</span>
-            <div class="filesStyling">
-
-              <div class="uploadfilecontainer" (click)="fileInput3.click()" appUpload (onFileDropped)="uploadFile3($event)">
-                <input hidden type="file" formControlName="icon" #fileInput3 (change)="uploadFile3($event.target.files)">
-              </div>
-
-              <div class="files-list" *ngFor="let file of files3;let i= index">
-                <p> {{ file }} </p>
-                <button class="delete-file" (click)="deleteAttachment3(i)">
-                  <img src="../../assets/Recycle_Bin_Full.png">
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
     </div>
-    <div fxFlex="100%" class="bg-white" fxLayoutAlign="center center" fxFlex.lt-sm="100%" fxFlex.lt-md="100%" style="padding: 5px;">
-      <div style="padding: 20px;">
-        <button mat-raised-button color="primary" (click)="resetForm()">Cancel</button>
-      </div>
-      <div style="padding: 20px;">
-        <button mat-raised-button color="secondary" (click)="serviceSubmit()">Submit</button>
-      </div>
-    </div>
-    <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
 
-    </div>
   </form>
 </div>

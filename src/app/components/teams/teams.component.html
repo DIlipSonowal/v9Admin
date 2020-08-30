@@ -1,1 +1,44 @@
-<p>teams works!</p>
+<div fxLayout="column" fxLayoutGap="20px" class="card-box  card">
+    <form [formGroup]="teamsForm">
+      <div fxLayout="row wrap " fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <div fxFlex.lt-sm="100%" fxFlex.lt-md="33%" style="padding: 5px;">
+          <h3>
+            <span class="heading-title" id="attachment" title="">
+                <i class="fas fa-user-circle" style="color:blue; font-size:30px"></i> &nbsp;&nbsp;Teams</span>
+          </h3>
+        </div>
+      </div>
+      <div fxLayout="row wrap " class="bg-grey" fxLayoutGap.lt-md="0px" fxLayoutAlign="start start" fxLayoutGap="5px">
+        <div fxFlex.lt-sm="100%" fxFlex.lt-md="33%" style="padding: 5px;">
+          <h4>&nbsp;</h4>
+        </div>
+        <div class="card-box  card" fxFlex="33%" fxFlex.lt-sm="100%" fxFlex.lt-md="33%" fxLayout="column">
+            <div class="alignCard">
+  
+                <h4 class="header-title mt-0 mb-3 spacing">
+                <i class="fa fa-paperclip" style="font-size:18px;padding:0 10px;" aria-hidden="true"></i>Attachments</h4>
+              <div class="filesStyling">
+  
+                <div class="uploadfilecontainer" (click)="fileInput.click()" appUpload (onFileDropped)="uploadFile($event)">
+                  <input hidden type="file" accept="image/*" formControlName="img" #fileInput (change)="uploadFile($event.target.files)">
+                </div>
+  
+                <div class="files-list" *ngIf="files">
+                  <p> {{ files }} </p>
+                  <button class="delete-file" (click)="deleteAttachment()">
+                    <img src="../../assets/Recycle_Bin_Full.png">
+                  </button>
+                </div>
+              </div>
+              <div style="padding: 20px; text-align: right;">
+                <button mat-raised-button color="secondary" [disabled]="!teamsForm.valid" (click)="teamsSubmit()">Submit</button> &nbsp;&nbsp;
+                <button mat-raised-button color="primary" (click)="deleteAttachment()">Cancel</button>
+              </div>       
+            </div>
+        </div>
+  
+      </div>
+  
+    </form>
+  </div>
+  

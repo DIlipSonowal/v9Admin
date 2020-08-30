@@ -9,6 +9,11 @@ import { ServicesComponent } from '../components/services/services.component';
 import { WorksComponent } from '../components/works/works.component';
 import { TeamsComponent } from '../components/teams/teams.component';
 import { FeedbackComponent } from '../components/feedback/feedback.component';
+import { WhyV9Component } from '../components/about/why-v9/why-v9.component';
+import { MissionComponent } from '../components/about/mission/mission.component';
+import { VissionComponent } from '../components/about/vission/vission.component';
+import { OurValuesComponent } from '../components/our-values/our-values.component';
+import {CeoComponent} from '../components/ceo/ceo.component';
 const dashboardRoutes: Routes = [
     {
         path: '', component: DashomeComponent, children: [
@@ -20,6 +25,11 @@ const dashboardRoutes: Routes = [
           { path: 'works', component:WorksComponent },
           { path: 'teams', component:TeamsComponent },
           { path: 'feedback', component:FeedbackComponent },
+          { path: 'why-us', component:WhyV9Component },
+          { path: 'mission', component:MissionComponent },
+          { path: 'vission', component:VissionComponent },
+          { path: 'our-values', component:OurValuesComponent },
+          { path: 'ceo', component:CeoComponent },
         ]
     },
 

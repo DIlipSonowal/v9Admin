@@ -1,0 +1,43 @@
+.card-box {
+  margin: 17px;
+  background: #ffffff;
+}
+.form-container{
+width: 100%
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0em 0 0.5em 0 !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  background: #fff;
+}
+.form-container-bg{
+  background: #f9f9f9 !important;
+}
+mat-form-field {
+  margin-right: 12px;
+}
+.span-btn{
+  background: #3f51b5;
+  padding: 8px;
+  color: #fff;
+  border-radius: 4px;
+}
+.delete-file > img {
+  width: 21px;
+  background: transparent !important;
+  border: none;
+  cursor: pointer;
+}
+.deleteForm{
+ display: table;
+ button{
+   display:table-cell;
+   background-color: #ffffff;
+   border: none;
+   background: transparent;
+ }
+ mat-form-field{
+  display:table-cell;
+ }
+}

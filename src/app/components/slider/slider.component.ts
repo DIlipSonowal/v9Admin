@@ -11,9 +11,7 @@ import { HomeService } from '../../services/home.service';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
-
-
-  date = new FormControl(new Date());
+ date = new FormControl(new Date());
   files = [];
   serializedDate = new FormControl((new Date()).toISOString());
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
@@ -42,11 +40,11 @@ uploadFile(event) {
   if(event.length <=1){
     for (let index = 0; index < event.length; index++) {
       const element = event[index];
-      this.files[0] = element.name; 
+      this.files[0] = element.name;
     }
     this.topSlider.get('files').setValue(event[0]);
   }
-  
+
 }
 // deleteAttachment(index) {
 //   //this.files.splice(index, 1)

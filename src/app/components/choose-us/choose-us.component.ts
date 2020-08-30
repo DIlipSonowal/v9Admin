@@ -92,7 +92,8 @@ export class ChooseUsComponent implements OnInit {
         message = res.error[0];
       }
       this._snackBar.open(message, 'Close', {
-        duration: 2000
+        duration: 3000,
+        verticalPosition :'top' 
       });
     });
     //console.log(formData);

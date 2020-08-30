@@ -1,9 +1,10 @@
 import { Component, OnInit,  NgZone, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
-import {FormControl} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-feedback',
@@ -12,26 +13,14 @@ import {FormControl} from '@angular/forms';
 })
 export class FeedbackComponent implements OnInit {
 
-  files = []; filesCountry =[];formArr: FormArray;  files2 = []; files3 = [];
+  files = []; filesCountry =[];formArr: FormArray;  final_files = [];
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   header: any;
-  constructor(private fb: FormBuilder, private _ngZone: NgZone) { }
+  constructor(private fb: FormBuilder, private _ngZone: NgZone, private hs:HomeService, private _snackBar: MatSnackBar) { }
    feedbackForm = this.fb.group({
-    section1: this.fb.group({
-      name: [""],
-      para: [''],
-      icon: ['']
-    }),
-    section2: this.fb.group({
-      name: [""],
-      para: [''],
-      icon: ['']
-    }),
-    section3: this.fb.group({
-      name: [""],
-      para: [''],
-      icon: ['']
-    }),
+      name: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      para: ['',[Validators.required, Validators.minLength(50), Validators.maxLength(500)]],
+      icon: ['',[Validators.required]]
   });
 
   public onChange( { editor }: ChangeEvent ) {
@@ -47,40 +36,32 @@ export class FeedbackComponent implements OnInit {
         .subscribe(() => this.autosize.resizeToFitContent(true));
   }
   uploadFile(event) {
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.files.push(element.name)
-    }
+    //console.log('events', event);
+      this.files[0] = event[0].name;
+      this.final_files[0] = event[0];
   }
-  uploadFile2(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.files2.push(element.name)
-    }
+
+  deleteAttachment() {
+    this.files[0] = "";
+    this.final_files[0] = "";
+    this.feedbackForm.get('icon').setValue('');
   }
-  uploadFile3(event){
-    console.log('events', event);
-    for (let index = 0; index < event.length; index++) {
-      const element = event[index];
-      this.files3.push(element.name)
-    }
-  }
-  deleteAttachment(index) {
-    this.files.splice(index, 1)
-  }
-  deleteAttachment2(index) {
-    this.files2.splice(index, 1)
-  }
-  deleteAttachment3(index) {
-    this.files3.splice(index, 1)
-  }
-   dynamicHeader():FormArray {
-   return  this.formArr = this.feedbackForm.controls.icons as FormArray;
+
+  dynamicHeader():FormArray {
+    return  this.formArr = this.feedbackForm.controls.icons as FormArray;
   }
   serviceSubmit(){
-    console.log('values', this.feedbackForm.value);
+    // console.log('values', this.feedbackForm.value);
+    const formData = new FormData();
+    formData.append(`images`, this.final_files[0]);
+    formData.append('header', this.feedbackForm.get('name').value);
+    formData.append('sub_header', this.feedbackForm.get('para').value);
+    this.hs.feedBack(formData).subscribe( (res:any)=>{
+      this._snackBar.open(res.message, 'Close', {
+        duration: 3000,
+        verticalPosition :'top' 
+      });
+    });
   }
   resetForm(){
     this.feedbackForm.reset();
