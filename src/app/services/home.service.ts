@@ -171,4 +171,17 @@ export class HomeService implements OnInit{
     }));
    }
 
+   aboutCeo(data) {
+    const token = JSON.parse(localStorage.getItem('currentUser')).jwt;
+    const httpOptions = {
+        headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`,
+        }),
+    };
+    return this.http.post(`${endpoint}/about_ceo`, data, httpOptions)
+    .pipe(map( res => {
+      return res;
+    }));
+  }
+
 }

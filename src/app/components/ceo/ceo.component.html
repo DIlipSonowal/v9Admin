@@ -33,9 +33,9 @@
                <input hidden type="file" formControlName="files" #fileInput (change)="uploadFile($event.target.files)">
              </div>
 
-             <div class="files-list" *ngFor="let file of files;let i= index">
+             <div class="files-list" *ngIf="file">
                <p> {{ file }} </p>
-               <button class="delete-file" (click)="deleteAttachment(i)">
+               <button class="delete-file" (click)="deleteAttachment()">
                  <img src="../../assets/Recycle_Bin_Full.png">
                </button>
              </div>

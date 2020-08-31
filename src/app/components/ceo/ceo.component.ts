@@ -4,6 +4,7 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { HomeService } from '../../services/home.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-ceo',
@@ -11,15 +12,15 @@ import { HomeService } from '../../services/home.service';
   styleUrls: ['./ceo.component.scss']
 })
 export class CeoComponent implements OnInit {
-  files = [];
-  final_files = [];
+  file = "";
+  final_file = "";
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
-  constructor(private fb: FormBuilder, private _ngZone: NgZone, private slider: HomeService) { }
+  constructor(private fb: FormBuilder, private _ngZone: NgZone, private slider: HomeService, private _snackBar: MatSnackBar) { }
   ceoForm = this.fb.group({
-    header: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-    name: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-    sub_title: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
-    text_content:['', [Validators.required, Validators.minLength(50), Validators.maxLength(500)]],
+    header: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
+    name: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+    sub_title: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
+    text_content:['', [Validators.required, Validators.minLength(50), Validators.maxLength(5000)]],
     files: ['', [Validators.required]]
   });
 
@@ -36,36 +37,28 @@ export class CeoComponent implements OnInit {
         .subscribe(() => this.autosize.resizeToFitContent(true));
   }
   uploadFile(event) {
-    console.log('events', event);
-    if(event.length <=1){
-      for (let index = 0; index < event.length; index++) {
-        const element = event[index];
-        this.files.push(element.name);
-        this.final_files.push(event[index]);
-      }
-    }
+    const element = event[0];
+    this.file = element.name;
+    this.final_file = element;
   }
-  deleteAttachment(index) {
-    this.files.splice(index, 1);
-    this.final_files.splice(index, 1)
-    if(!this.files.length) {
-      this.ceoForm.get('files').setValue('');
-    }
+  deleteAttachment() {
+    this.file = "";
+    this.final_file = "";
   }
 
   saveForm() {
     const formData = new FormData();
-    for(let i=0; i< this.final_files.length; i++) {
-      formData.append(`images`, this.final_files[i]);
-    }
-    //formData.append(`images`, JSON.stringify(this.final_files));
+    formData.append(`images`, this.final_file);
     formData.append('header', this.ceoForm.get('header').value);
     formData.append('name', this.ceoForm.get('name').value);
     formData.append('sub_header', this.ceoForm.get('sub_title').value);
     formData.append('text_content', this.ceoForm.get('text_content').value);
-    console.log(this.ceoForm.value);
-    this.slider.goalSlider(formData).subscribe( res =>{
-      console.log(res);
+    //console.log(this.ceoForm.value);
+    this.slider.aboutCeo(formData).subscribe( (res:any) =>{
+      this._snackBar.open(res.message, 'Close', {
+        duration: 3000,
+        verticalPosition :'top' 
+      });
     });
   }
 }
